@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  def add_product_to_cart
+  def create
     @cart = current_user.cart
     @product = Product.where(id: params[:product_id]).take
     if (@cart.product = @product) && @cart.save
